@@ -6,16 +6,15 @@ import ru.digitalleague.storage_example.Storage;
 
 import static org.junit.Assert.assertFalse;
 
-public class TestExample {
+public class CheckAddObjectOverSize_Negative {
 
-    @Before
-    public void setUp(){
-        Storage.addObject("apple", 3);
-        Storage.addObject("pear", 7);
+    @Before()
+    public void setUp() {
+        Storage.addObject("pear", 12);
     }
+
     @Test
-    public void simpleTest() {
-        Storage.removeObject("pear");
+    public void checkAddProductOverSize() {
         assertFalse(Storage.isInStock("pear"));
     }
 }
